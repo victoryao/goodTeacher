@@ -18,9 +18,10 @@ import com.goodteacher.im.student.R;
 import com.goodteacher.im.student.ui.BlackListActivity;
 import com.goodteacher.im.student.ui.FragmentBase;
 import com.goodteacher.im.student.ui.LoginActivity;
-import com.goodteacher.im.student.ui.SetMyAccountActivity;
 import com.goodteacher.im.student.ui.SetMyInfoActivity;
+import com.goodteacher.im.student.ui.SoftActivity;
 import com.goodteacher.im.student.util.SharePreferenceUtil;
+
 
 /**
  * 设置
@@ -35,8 +36,8 @@ public class SettingsFragment extends FragmentBase implements OnClickListener{
 
 	Button btn_logout;
 	TextView tv_set_name;
-	RelativeLayout layout_info, layout_account,rl_switch_notification, rl_switch_voice,
-			rl_switch_vibrate,layout_blacklist;
+	RelativeLayout layout_info, rl_switch_notification, rl_switch_voice,
+			rl_switch_vibrate,layout_blacklist,layout_softlist;
 
 	ImageView iv_open_notification, iv_close_notification, iv_open_voice,
 			iv_close_voice, iv_open_vibrate, iv_close_vibrate;
@@ -71,9 +72,9 @@ public class SettingsFragment extends FragmentBase implements OnClickListener{
 		initTopBarForOnlyTitle("设置");
 		//黑名单列表
 		layout_blacklist = (RelativeLayout) findViewById(R.id.layout_blacklist);
+		layout_softlist = (RelativeLayout) findViewById(R.id.layout_softlist);
 		
 		layout_info = (RelativeLayout) findViewById(R.id.layout_info);
-		layout_account = (RelativeLayout) findViewById(R.id.layout_account);
 		rl_switch_notification = (RelativeLayout) findViewById(R.id.rl_switch_notification);
 		rl_switch_voice = (RelativeLayout) findViewById(R.id.rl_switch_voice);
 		rl_switch_vibrate = (RelativeLayout) findViewById(R.id.rl_switch_vibrate);
@@ -121,8 +122,8 @@ public class SettingsFragment extends FragmentBase implements OnClickListener{
 		}
 		btn_logout.setOnClickListener(this);
 		layout_info.setOnClickListener(this);
-		layout_account.setOnClickListener(this);
 		layout_blacklist.setOnClickListener(this);
+		layout_softlist.setOnClickListener(this);
 
 	}
 
@@ -139,18 +140,16 @@ public class SettingsFragment extends FragmentBase implements OnClickListener{
 
 	@Override
 	public void onClick(View v) {
-		Intent intent;
+		// TODO Auto-generated method stub
 		switch (v.getId()) {
 		case R.id.layout_blacklist:// 启动到黑名单页面
 			startAnimActivity(new Intent(getActivity(),BlackListActivity.class));
 			break;
-		case R.id.layout_info:// 启动到个人资料页面
-			intent =new Intent(getActivity(),SetMyInfoActivity.class);
-			intent.putExtra("from", "me");
-			startActivity(intent);
+		case R.id.layout_softlist:// 启动到软件相关页面
+			startAnimActivity(new Intent(getActivity(),SoftActivity.class));
 			break;
-		case R.id.layout_account:// 启动到账号页面
-			intent =new Intent(getActivity(),SetMyAccountActivity.class);
+		case R.id.layout_info:// 启动到个人资料页面
+			Intent intent =new Intent(getActivity(),SetMyInfoActivity.class);
 			intent.putExtra("from", "me");
 			startActivity(intent);
 			break;

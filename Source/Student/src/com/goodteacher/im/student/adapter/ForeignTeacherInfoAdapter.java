@@ -61,7 +61,7 @@ public class ForeignTeacherInfoAdapter extends ArrayAdapter<BmobRecent> implemen
 			iv_teacher_pic.setImageResource(R.drawable.teacher);
 		}
 		
-		tv_teacher_name.setText("John");
+		tv_teacher_name.setText("Join");
 		tv_teacher_evaluation.setText("ÎåĞÇ");
 		//ÏÔÊ¾ÄÚÈİ
 		if(item.getType()==BmobConfig.TYPE_TEXT){

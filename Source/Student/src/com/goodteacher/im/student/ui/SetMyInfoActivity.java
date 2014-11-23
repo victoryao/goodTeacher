@@ -69,7 +69,7 @@ public class SetMyInfoActivity extends ActivityBase implements OnClickListener {
 	LinearLayout layout_all;
 
 	Button btn_chat, btn_back, btn_add_friend;
-	RelativeLayout layout_head, layout_nick, layout_gender,layout_city, layout_black_tips, layout_phone;
+	RelativeLayout layout_head, layout_nick, layout_gender, layout_black_tips;
 
 	String from = "";
 	String username = "";
@@ -100,9 +100,7 @@ public class SetMyInfoActivity extends ActivityBase implements OnClickListener {
 		tv_set_nick = (TextView) findViewById(R.id.tv_set_nick);
 		layout_head = (RelativeLayout) findViewById(R.id.layout_head);
 		layout_nick = (RelativeLayout) findViewById(R.id.layout_nick);
-		layout_phone = (RelativeLayout) findViewById(R.id.layout_phone);
 		layout_gender = (RelativeLayout) findViewById(R.id.layout_gender);
-		layout_city = (RelativeLayout) findViewById(R.id.layout_city);
 		// 黑名单提示语
 		layout_black_tips = (RelativeLayout) findViewById(R.id.layout_black_tips);
 		tv_set_gender = (TextView) findViewById(R.id.tv_set_gender);
@@ -116,9 +114,7 @@ public class SetMyInfoActivity extends ActivityBase implements OnClickListener {
 			initTopBarForLeft("个人资料");
 			layout_head.setOnClickListener(this);
 			layout_nick.setOnClickListener(this);
-			layout_phone.setOnClickListener(this);
 			layout_gender.setOnClickListener(this);
-			layout_city.setOnClickListener(this);
 			iv_nickarraw.setVisibility(View.VISIBLE);
 			iv_arraw.setVisibility(View.VISIBLE);
 			btn_back.setVisibility(View.GONE);
@@ -241,14 +237,8 @@ public class SetMyInfoActivity extends ActivityBase implements OnClickListener {
 		case R.id.layout_nick:
 			startAnimActivity(UpdateInfoActivity.class);
 			break;
-		case R.id.layout_phone:
-			startAnimActivity(UpdatePhoneActivity.class);
-			break;
 		case R.id.layout_gender:// 性别
 			showSexChooseDialog();
-			break;
-		case R.id.layout_city:// 城市
-			showCityChooseDialog();
 			break;
 		case R.id.btn_back:// 黑名单
 			showBlackDialog(user.getUsername());
@@ -277,23 +267,6 @@ public class SetMyInfoActivity extends ActivityBase implements OnClickListener {
 		.show();
 	}
 
-	String[] citys = new String[]{ "北京", "上海", "广州" , "深圳"  };
-	private void showCityChooseDialog() {
-		new AlertDialog.Builder(this)
-		.setTitle("单选框")
-		.setIcon(android.R.drawable.ic_dialog_info)
-		.setSingleChoiceItems(citys, 0,
-				new DialogInterface.OnClickListener() {
-					public void onClick(DialogInterface dialog,
-							int which) {
-						BmobLog.i("点击的是"+citys[which]);
-						updateInfo(which);
-						dialog.dismiss();
-					}
-				})
-		.setNegativeButton("取消", null)
-		.show();
-	}
 	
 	/** 修改资料
 	  * updateInfo

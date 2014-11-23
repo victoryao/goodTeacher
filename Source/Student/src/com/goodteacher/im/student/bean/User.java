@@ -27,12 +27,17 @@ public class User extends BmobChatUser {
 	private boolean sex;
 	
 	private BmobRelation blogs;
-	
+		
 	private String lang;
 	
 	private String phone;
 	
 	private String role;
+	
+	/**
+	 * 是否是老师
+	 */
+	private boolean isTeacher;
 	
 	/**
 	 * 地理坐标
@@ -82,6 +87,13 @@ public class User extends BmobChatUser {
 	}
 	public void setRole(String role) {
 		this.role = role;
+	}
+	
+	public boolean isTeacher() {
+		return isTeacher;
+	}
+	public void setTeacher(boolean isTeacher) {
+		this.isTeacher = isTeacher;
 	}
 	
 }
