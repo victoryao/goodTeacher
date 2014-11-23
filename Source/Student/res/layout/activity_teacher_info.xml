@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <include
+        android:id="@+id/common_actionbar"
+        layout="@layout/include_action_bar" />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="105dp"
+            android:paddingBottom="5.0dip"
+            android:paddingTop="5.0dip" >
+
+            <ImageView
+                android:id="@+id/iv_teacher_pic"
+                style="@style/Smile.ImageView.Photo_Middle"
+                android:layout_alignParentLeft="true"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="10dp"
+                android:src="@drawable/teacher" />
+
+            <TextView
+                android:id="@+id/tv_teacher_name"
+                style="@style/Smile.TextView._Black"
+                android:layout_width="wrap_content"
+                android:layout_height="25.0dip"
+                android:layout_marginLeft="10.0dip"
+                android:layout_marginRight="58.0dip"
+                android:layout_toRightOf="@id/iv_teacher_pic"
+                android:ellipsize="end"
+                android:gravity="left|center"
+                android:singleLine="true"
+                android:text="Tom 50 男"
+                android:textColor="@drawable/recent_name_text_color_selector" />
+
+            <TextView
+                android:id="@+id/tv_teacher_msg"
+                android:layout_width="wrap_content"
+                android:layout_height="35.0dip"
+                android:layout_below="@id/tv_teacher_name"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="35.0dip"
+                android:layout_toRightOf="@id/iv_teacher_pic"
+                android:ellipsize="end"
+                android:gravity="center_vertical"
+                android:paddingLeft="6.0dip"
+                android:paddingRight="6.0dip"
+                android:singleLine="true"
+                android:text="3元/分"
+                android:textColor="@drawable/recent_message_text_color_selector"
+                android:textSize="15.0sp" />
+
+            <TextView
+                android:id="@+id/tv_teacher_evaluation"
+                style="@style/Smile.TextView._Black"
+                android:layout_width="wrap_content"
+                android:layout_height="25.0dip"
+                android:layout_alignParentRight="true"
+                android:layout_alignWithParentIfMissing="true"
+                android:layout_marginRight="10dip"
+                android:layout_toRightOf="@id/iv_teacher_pic"
+                android:ellipsize="end"
+                android:gravity="center"
+                android:padding="0.0dip"
+                android:singleLine="true"
+                android:text="5星"
+                android:textColor="@drawable/recent_name_text_color_selector" />
+
+            <TextView
+                android:id="@+id/tv_teacher_location"
+                android:layout_width="wrap_content"
+                android:layout_height="35.0dip"
+                android:layout_below="@id/tv_teacher_evaluation"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="35.0dip"
+                android:layout_toRightOf="@id/tv_teacher_msg"
+                android:ellipsize="end"
+                android:gravity="center_vertical"
+                android:paddingLeft="6.0dip"
+                android:paddingRight="6.0dip"
+                android:singleLine="true"
+                android:text="英语/美国"
+                android:textColor="@drawable/recent_message_text_color_selector"
+                android:textSize="15.0sp" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" 
+        android:paddingTop="20dip"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="35.0dip"
+            android:layout_gravity="center_vertical"
+            android:gravity="center"
+            style="@style/teacherinfo_TextView_title"
+            android:singleLine="true"
+            android:text="个人简介" />
+         <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:singleLine="true"
+            android:text="毕业于纽约大学，现在在对外经贸大学留学" />
+    </LinearLayout>
+    
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" 
+        android:paddingTop="20dip"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="35.0dip"
+            android:layout_gravity="center_vertical"
+            android:gravity="center"
+            style="@style/teacherinfo_TextView_title"
+            android:singleLine="true"
+            android:text="通话记录" />
+         <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:singleLine="true"
+            android:text="2014年22：00-22：30 \t 30分钟 \t 100" />
+    </LinearLayout>
+    
+     <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" 
+        android:paddingTop="20dip"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="35.0dip"
+            android:layout_gravity="center_vertical"
+            android:gravity="center"
+            style="@style/teacherinfo_TextView_title"
+            android:singleLine="true"
+            android:text="用户评价" />
+         <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:singleLine="true"
+            android:text="158***94218评价 \n\r 五星  \n\r 发音纯正，交流愉快 " />
+    </LinearLayout>
+    
+     <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" 
+        android:paddingTop="30dip"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/reservebtn"
+            android:layout_height="50dip"
+            android:layout_width="80dip"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:layout_marginLeft="50dip"
+            style="@style/teacherinfo_TextView_button"
+            android:text="预约" />
+         <Button
+            android:id="@+id/cancelbtn"
+            android:layout_height="50dip"
+            android:layout_width="80dip"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:layout_marginLeft="80dip"
+            style="@style/teacherinfo_TextView_button"
+            android:text="删除" />
+    </LinearLayout>
+
+</LinearLayout>

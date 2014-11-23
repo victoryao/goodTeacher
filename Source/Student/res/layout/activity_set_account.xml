@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layout_all"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/theme_bg_color"
+    android:orientation="vertical" >
+
+    <include
+        android:id="@+id/common_actionbar"
+        layout="@layout/include_action_bar" />
+
+    
+
+    <RelativeLayout
+        android:id="@+id/layout_password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/about_mid_bg"
+        android:padding="10dp" >
+
+        <TextView
+            style="@style/Smile.TextView._Black"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:text="@string/set_password" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:gravity="center_vertical"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/tv_set_password"
+                style="@style/Smile.TextView._Black"
+                android:drawablePadding="10dp" />
+
+            <ImageView
+                android:id="@+id/iv_passwordarraw"
+                style="@style/Smile.ImageView"
+                android:layout_width="20dp"
+                android:contentDescription="@string/action_settings"
+                android:src="@drawable/register_bottom_arrow" />
+        </LinearLayout>
+    </RelativeLayout>
+
+    
+
+    
+    
+    <RelativeLayout
+        android:id="@+id/layout_balance"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/about_mid_bg"
+        android:padding="10dp" >
+
+        <TextView
+            style="@style/Smile.TextView._Black"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:text="@string/set_balance" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:gravity="center_vertical"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/tv_set_phone"
+                style="@style/Smile.TextView._Black"
+                android:drawablePadding="10dp" />
+
+            <ImageView
+                android:id="@+id/iv_balancearraw"
+                style="@style/Smile.ImageView"
+                android:layout_width="20dp"
+                android:contentDescription="@string/action_settings"
+                android:src="@drawable/register_bottom_arrow" />
+        </LinearLayout>
+    </RelativeLayout>
+    
+
+    <Button
+        android:id="@+id/btn_add_friend"
+        style="@style/Smile.Button.theme"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_marginLeft="@dimen/activity_vertical_margin"
+        android:layout_marginRight="@dimen/activity_vertical_margin"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:text="@string/add_friend"
+        android:visibility="gone" />
+
+    <Button
+        android:id="@+id/btn_chat"
+        style="@style/Smile.Button.theme"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_marginLeft="@dimen/activity_vertical_margin"
+        android:layout_marginRight="@dimen/activity_vertical_margin"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:text="@string/chat" />
+
+    <Button
+        android:id="@+id/btn_back"
+        style="@style/Smile.Button.logout"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_marginLeft="@dimen/activity_vertical_margin"
+        android:layout_marginRight="@dimen/activity_vertical_margin"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:text="@string/blacklist" />
+
+    <RelativeLayout
+        android:id="@+id/layout_black_tips"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:padding="10dp"
+        android:visibility="gone" >
+
+        <TextView
+            style="@style/Smile.TextView._Black"
+            android:layout_centerInParent="true"
+            android:text="@string/black_tips"
+            android:textSize="14sp" />
+    </RelativeLayout>
+
+</LinearLayout>
