@@ -5,7 +5,6 @@ import cn.bmob.v3.listener.SaveListener;
 
 import com.goodteacher.im.student.R;
 
-import com.goodteacher.im.student.bean.FeedBack;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -17,7 +16,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 
-public class FeedBackActivity extends BaseActivity implements OnClickListener{
+public class FeedBackActivity extends Activity implements OnClickListener{
 	
 	@SuppressWarnings("unused")
 	private static final String TAG = "FeedBackActivity";
@@ -34,7 +33,6 @@ public class FeedBackActivity extends BaseActivity implements OnClickListener{
 	}
 	
 	private void initView() {
-		initTopBarForLeft("意见反馈");
 		etContent = (EditText) findViewById(R.id.et_feedback_content);
 		btnSubmit = (Button) findViewById(R.id.btn_feedback_submit);
 		btnSubmit.setOnClickListener(this);
@@ -49,24 +47,24 @@ public class FeedBackActivity extends BaseActivity implements OnClickListener{
 			toast("亲，请先写点东西吧");
 		} else {
 			BmobUser user = BmobUser.getCurrentUser(this);
-			FeedBack fb = new FeedBack();
-			fb.setUsername(user.getUsername());
-			fb.setEmail(user.getEmail());
-			fb.setContent(content);
-			fb.save(this, new SaveListener() {
-				
-				@Override
-				public void onSuccess() {
-					toast("提交成功, 我们会尽快回复");
-					back();
-				}
-				
-				@Override
-				public void onFailure(int arg0, String msg) {
-					toast("提交失败");
-				}
-				
-			});
+//			FeedBack fb = new FeedBack();
+//			fb.setUsername(user.getUsername());
+//			fb.setEmail(user.getEmail());
+//			fb.setContent(content);
+//			fb.save(this, new SaveListener() {
+//				
+//				@Override
+//				public void onSuccess() {
+//					toast("提交成功, 我们会尽快回复");
+//					back();
+//				}
+//				
+//				@Override
+//				public void onFailure(int arg0, String msg) {
+//					toast("提交失败");
+//				}
+//				
+//			});
 			
 		}
 		

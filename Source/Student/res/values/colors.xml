@@ -27,6 +27,8 @@
     <color name="theme_bg_color">#f0f2f5</color>
     <color name="color_theme">#489cfa</color>
     <color name="c_f98800">#ed4e23</color>
+    <color name="base_color_text_red">#ff0000</color>
+    
     
     <color name="dialog_color_title">#f82c22</color>
     <color name="guide_color">#898989</color>

@@ -32,7 +32,6 @@ import com.goodteacher.im.student.view.xlist.XListView.IXListViewListener;
   */
 public class AddFriendActivity extends ActivityBase implements OnClickListener,IXListViewListener,OnItemClickListener{
 	
-	EditText et_find_name;
 	Button btn_search;
 	
 	List<BmobChatUser> users = new ArrayList<BmobChatUser>();
@@ -48,7 +47,6 @@ public class AddFriendActivity extends ActivityBase implements OnClickListener,I
 	
 	private void initView(){
 		initTopBarForLeft("≤È’“∫√”—");
-		et_find_name = (EditText)findViewById(R.id.et_find_name);
 		btn_search = (Button)findViewById(R.id.btn_search);
 		btn_search.setOnClickListener(this);
 		initXListView();
@@ -176,7 +174,6 @@ public class AddFriendActivity extends ActivityBase implements OnClickListener,I
 		switch (arg0.getId()) {
 		case R.id.btn_search://À—À˜
 			users.clear();
-			searchName = et_find_name.getText().toString();
 			if(searchName!=null && !searchName.equals("")){
 				initSearchList(false);
 			}else{

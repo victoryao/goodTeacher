@@ -7,16 +7,17 @@
     <uses-sdk
         android:minSdkVersion="8"
         android:targetSdkVersion="14" />
-    
-     <supports-screens
+
+    <supports-screens
         android:anyDensity="true"
         android:largeScreens="true"
         android:normalScreens="false"
         android:resizeable="true"
         android:smallScreens="true" />
-     
+
     <!-- normal permission -->
-    <uses-permission android:name="android.permission.INTERNET" /> <!-- 允许应用打开网络套接口 -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <!-- 允许应用打开网络套接口 -->
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.READ_LOGS" />
@@ -25,7 +26,9 @@
         android:name="cn.bmob.permission.push"
         android:protectionLevel="normal" >
     </permission>
-    <uses-permission android:name="cn.bmob.permission.push" /> <!-- 添加自定义的权限 -->
+
+    <uses-permission android:name="cn.bmob.permission.push" />
+    <!-- 添加自定义的权限 -->
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
 
@@ -65,28 +68,34 @@
     <uses-permission android:name="android.permission.PROCESS_OUTGOING_CALLS" >
     </uses-permission>
     <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
-    
-    <!-- 这个权限用于进行网络定位-->
-	<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"></uses-permission>
-	<!-- 这个权限用于访问GPS定位-->
-	<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"></uses-permission>
-	<!-- 用于访问wifi网络信息，wifi信息会用于进行网络定位-->
-	<uses-permission android:name="android.permission.ACCESS_WIFI_STATE"></uses-permission>
-	<!-- 获取运营商信息，用于支持提供运营商信息相关的接口-->
-	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"></uses-permission>
-	<!-- 这个权限用于获取wifi的获取权限，wifi信息会用来进行网络定位-->
-	<uses-permission android:name="android.permission.CHANGE_WIFI_STATE"></uses-permission>
-	<!-- 用于读取手机当前的状态-->
-	<uses-permission android:name="android.permission.READ_PHONE_STATE"></uses-permission>
-     <!-- baidumap 所需的权限 -end -->
+
+    <!-- 这个权限用于进行网络定位 -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" >
+    </uses-permission>
+    <!-- 这个权限用于访问GPS定位 -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" >
+    </uses-permission>
+    <!-- 用于访问wifi网络信息，wifi信息会用于进行网络定位 -->
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" >
+    </uses-permission>
+    <!-- 获取运营商信息，用于支持提供运营商信息相关的接口 -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" >
+    </uses-permission>
+    <!-- 这个权限用于获取wifi的获取权限，wifi信息会用来进行网络定位 -->
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" >
+    </uses-permission>
+    <!-- 用于读取手机当前的状态 -->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" >
+    </uses-permission>
+    <!-- baidumap 所需的权限 -end -->
     <application
-        android:name="com.goodteacher.im.student.CustomApplcation"
+        android:name=".CustomApplcation"
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
-            android:name="com.goodteacher.im.student.ui.SplashActivity"
+            android:name=".ui.SplashActivity"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -95,51 +104,33 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.goodteacher.im.student.ui.MainActivity"
+            android:name=".ui.MainActivity"
             android:launchMode="singleTask"
             android:windowSoftInputMode="stateAlwaysHidden|adjustPan" />
-        
-        <activity android:name="com.goodteacher.im.student.ui.LoginActivity" />
-        
-        <activity android:name="com.goodteacher.im.student.ui.LocationActivity" />
-        
-        <activity android:name="com.goodteacher.im.student.ui.BlackListActivity" />
-        
-        <activity android:name="com.goodteacher.im.student.ui.ImageBrowserActivity" />
-        
+        <activity android:name=".ui.LoginActivity" />
+        <activity android:name=".ui.LocationActivity" />
+        <activity android:name=".ui.BlackListActivity" />
+        <activity android:name=".ui.ImageBrowserActivity" />
         <activity
-            android:name="com.goodteacher.im.student.ui.AddFriendActivity"
+            android:name=".ui.AddFriendActivity"
             android:windowSoftInputMode="stateHidden|adjustPan" />
-        
-        <activity android:name="com.goodteacher.im.student.ui.NewFriendActivity" />
-        <activity android:name="com.goodteacher.im.student.ui.NearPeopleActivity" />
-        
-        <activity android:name="com.goodteacher.im.student.ui.UpdateInfoActivity" />
-        
+        <activity android:name=".ui.NewFriendActivity" />
+        <activity android:name=".ui.NearPeopleActivity" />
+        <activity android:name=".ui.UpdateInfoActivity" />
         <activity
-            android:name="com.goodteacher.im.student.ui.ChatActivity"
+            android:name=".ui.ChatActivity"
             android:windowSoftInputMode="stateAlwaysHidden|adjustResize" />
-        
-        <activity android:name="com.goodteacher.im.student.ui.SetMyInfoActivity" />
-        
-        <activity android:name="com.goodteacher.im.student.ui.TeacherInfoActivity" />
-        
-        <activity android:name="com.goodteacher.im.student.ui.TeacherEvalutationActivity" />
-        
-       <activity android:name="com.goodteacher.im.student.ui.UpdatePhoneActivity" /> 
-       
-       <activity android:name="com.goodteacher.im.student.ui.SetMyAccountActivity" /> 
-        
+        <activity android:name=".ui.SetMyInfoActivity" />
         <activity
-            android:name="com.goodteacher.im.student.ui.RegisterActivity"
+            android:name=".ui.RegisterActivity"
             android:label="@string/app_name" />
 
-        <!-- baidu map-->
+        <!-- baidu map -->
         <meta-data
             android:name="com.baidu.lbsapi.API_KEY"
             android:value="hfyMtrWcv6qTQyvwgtusaYGE" />
-        
-         <service
+
+        <service
             android:name="com.baidu.location.f"
             android:enabled="true"
             android:process=":remote" >
@@ -148,8 +139,8 @@
                 </action>
             </intent-filter>
         </service>
-  
-         <!-- IM聊天所需的Push start-->
+
+        <!-- IM聊天所需的Push start -->
         <service
             android:name="cn.bmob.push.lib.service.PushService"
             android:exported="true"
@@ -162,7 +153,9 @@
         </service>
 
         <receiver android:name="cn.bmob.push.PushReceiver" >
-            <intent-filter android:priority="2147483647" > <!-- 优先级加最高 -->
+            <intent-filter android:priority="2147483647" >
+
+                <!-- 优先级加最高 -->
                 <!-- 系统启动完成后会调用 -->
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
                 <!-- 解锁完成后会调用 -->
@@ -171,21 +164,34 @@
                 <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
             </intent-filter>
         </receiver>
-        <receiver android:name="com.goodteacher.im.student.MyMessageReceiver" >
+        <receiver android:name=".MyMessageReceiver" >
             <intent-filter>
                 <action android:name="cn.bmob.push.action.MESSAGE" />
             </intent-filter>
         </receiver>
 
-        <!-- IM聊天所需的Push end-->
-        
+        <!-- IM聊天所需的Push end -->
+
+
         <!-- 启动定时检测操作 -->
-         <service android:name="cn.bmob.im.poll.BmobPollService">
+        <service android:name="cn.bmob.im.poll.BmobPollService" >
             <intent-filter>
-                <action android:name="cn.bmob.im.service.BmobPollService"/>
+                <action android:name="cn.bmob.im.service.BmobPollService" />
             </intent-filter>
         </service>
-        
+
+        <activity
+            android:name=".ui.FeedBackActivity"
+            android:label="@string/title_activity_feed_back" >
+        </activity>
+        <activity
+            android:name=".ui.SoftActivity"
+            android:label="@string/title_activity_soft" >
+        </activity>
+        <activity
+            android:name="com.goodteacher.im.student.ui.AboutActivity"
+            android:label="@string/title_activity_about" >
+        </activity>
     </application>
 
 </manifest>

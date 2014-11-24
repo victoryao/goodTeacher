@@ -126,7 +126,7 @@ public class ChatActivity extends ActivityBase implements OnClickListener,
 		MsgPagerNum = 0;
 		// 组装聊天对象
 		targetUser = (BmobChatUser) getIntent().getSerializableExtra("user");
-		targetId = targetUser.getObjectId();
+//		targetId = targetUser.getObjectId();
 //		BmobLog.i("聊天对象：" + targetUser.getUsername() + ",targetId = "
 //				+ targetId);
 		//注册广播接收器
@@ -177,7 +177,7 @@ public class ChatActivity extends ActivityBase implements OnClickListener,
 	private void initView() {
 		mHeaderLayout = (HeaderLayout) findViewById(R.id.common_actionbar);
 		mListView = (XListView) findViewById(R.id.mListView);
-		initTopBarForLeft("与" + targetUser.getUsername() + "对话");
+		initTopBarForLeft("与" + "老师" + "对话");
 		initBottomView();
 		initXListView();
 		initVoiceView();
