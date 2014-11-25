@@ -192,6 +192,7 @@
             android:name="com.goodteacher.im.student.ui.AboutActivity"
             android:label="@string/title_activity_about" >
         </activity>
+        <activity android:name=".ui.UpdatePhoneActivity"></activity>
     </application>
 
 </manifest>

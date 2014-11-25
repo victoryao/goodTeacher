@@ -34,7 +34,7 @@
             android:layout_weight="1.0"
             android:background="@color/transparent"
             android:gravity="center_vertical"
-            android:hint="@string/add_name_hint"
+            android:hint="@string/add_phone_hint"
             />
     </LinearLayout>
 

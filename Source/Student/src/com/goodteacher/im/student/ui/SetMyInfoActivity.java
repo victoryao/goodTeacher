@@ -64,8 +64,8 @@ import com.nostra13.universalimageloader.core.ImageLoader;
 @SuppressLint("SimpleDateFormat")
 public class SetMyInfoActivity extends ActivityBase implements OnClickListener {
 
-	TextView tv_set_name, tv_set_nick, tv_set_gender;
-	ImageView iv_set_avator, iv_arraw, iv_nickarraw;
+	TextView tv_set_name, tv_set_nick, tv_set_gender,tv_set_phone;
+	ImageView iv_set_avator, iv_arraw, iv_nickarraw, iv_phonearray;
 	LinearLayout layout_all;
 
 	Button btn_chat, btn_back, btn_add_friend;
@@ -96,8 +96,10 @@ public class SetMyInfoActivity extends ActivityBase implements OnClickListener {
 		iv_set_avator = (ImageView) findViewById(R.id.iv_set_avator);
 		iv_arraw = (ImageView) findViewById(R.id.iv_arraw);
 		iv_nickarraw = (ImageView) findViewById(R.id.iv_nickarraw);
+		iv_phonearray = (ImageView) findViewById(R.id.iv_phonearraw);
 		tv_set_name = (TextView) findViewById(R.id.tv_set_name);
 		tv_set_nick = (TextView) findViewById(R.id.tv_set_nick);
+		tv_set_phone = (TextView) findViewById(R.id.tv_set_phone);
 		layout_head = (RelativeLayout) findViewById(R.id.layout_head);
 		layout_nick = (RelativeLayout) findViewById(R.id.layout_nick);
 		layout_phone = (RelativeLayout) findViewById(R.id.layout_phone);
@@ -120,6 +122,7 @@ public class SetMyInfoActivity extends ActivityBase implements OnClickListener {
 			layout_gender.setOnClickListener(this);
 			layout_city.setOnClickListener(this);
 			iv_nickarraw.setVisibility(View.VISIBLE);
+			iv_phonearray.setVisibility(View.VISIBLE);
 			iv_arraw.setVisibility(View.VISIBLE);
 			btn_back.setVisibility(View.GONE);
 			btn_chat.setVisibility(View.GONE);
@@ -188,6 +191,8 @@ public class SetMyInfoActivity extends ActivityBase implements OnClickListener {
 		refreshAvatar(user.getAvatar());
 		tv_set_name.setText(user.getUsername());
 		tv_set_nick.setText(user.getNick());
+		tv_set_phone.setText(user.getPhone());
+		
 		tv_set_gender.setText(user.getSex() == true ? "男" : "女");
 		// 检测是否为黑名单用户
 		if (from.equals("other")) {
@@ -261,10 +266,12 @@ public class SetMyInfoActivity extends ActivityBase implements OnClickListener {
 	
 	String[] sexs = new String[]{ "男", "女" };
 	private void showSexChooseDialog() {
+		User user = userManager.getCurrentUser(User.class);
+		int index = user.getSex() ? 0:1;
 		new AlertDialog.Builder(this)
-		.setTitle("单选框")
+		.setTitle("请选择性别")
 		.setIcon(android.R.drawable.ic_dialog_info)
-		.setSingleChoiceItems(sexs, 0,
+		.setSingleChoiceItems(sexs, index,
 				new DialogInterface.OnClickListener() {
 					public void onClick(DialogInterface dialog,
 							int which) {
