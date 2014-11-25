@@ -117,6 +117,9 @@
         <activity android:name=".ui.NewFriendActivity" />
         <activity android:name=".ui.NearPeopleActivity" />
         <activity android:name=".ui.UpdateInfoActivity" />
+        <activity android:name=".ui.TeacherInfoActivity" />
+        <activity android:name=".ui.TeacherEvalutationActivity" />
+        
         <activity
             android:name=".ui.ChatActivity"
             android:windowSoftInputMode="stateAlwaysHidden|adjustResize" />

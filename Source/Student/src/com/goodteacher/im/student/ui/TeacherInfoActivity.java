@@ -5,10 +5,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
-import android.widget.EditText;
-import cn.bmob.im.bean.BmobChatUser;
-import cn.bmob.im.bean.BmobRecent;
-import cn.bmob.im.db.BmobDB;
 
 import com.goodteacher.im.student.R;
 

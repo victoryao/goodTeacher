@@ -18,8 +18,8 @@ import cn.bmob.im.db.BmobDB;
 
 import com.goodteacher.im.student.R;
 import com.goodteacher.im.student.adapter.ForeignTeacherInfoAdapter;
-import com.goodteacher.im.student.ui.ChatActivity;
 import com.goodteacher.im.student.ui.FragmentBase;
+import com.goodteacher.im.student.ui.TeacherInfoActivity;
 import com.goodteacher.im.student.view.ClearEditText;
 
 public class ForeignTeacherFragment extends FragmentBase implements OnItemClickListener{
@@ -85,7 +85,7 @@ public class ForeignTeacherFragment extends FragmentBase implements OnItemClickL
 		user.setNick(recent.getNick());
 		user.setUsername(recent.getUserName());
 		user.setObjectId(recent.getTargetid());
-		Intent intent = new Intent(getActivity(), ChatActivity.class);
+		Intent intent = new Intent(getActivity(), TeacherInfoActivity.class);
 		intent.putExtra("user", user);
 		startAnimActivity(intent);
 	}
