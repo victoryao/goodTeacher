@@ -9,7 +9,7 @@ import com.goodteacher.im.student.bean.User;
 import com.goodteacher.im.student.view.HeaderLayout.onRightImageButtonClickListener;
 
 /**
- * 设置昵称和性别
+ * 设置电话号码
  * 
  * @ClassName: UpdatePhoneActivity
  * @Description: TODO
@@ -35,12 +35,12 @@ public class UpdatePhoneActivity extends ActivityBase {
 					@Override
 					public void onClick() {
 						// TODO Auto-generated method stub
-						String nick = edit_phone.getText().toString();
-						if (nick.equals("")) {
+						String phone = edit_phone.getText().toString();
+						if (phone.equals("")) {
 							ShowToast("请填写电话!");
 							return;
 						}
-						updateInfo(nick);
+						updateInfo(phone);
 					}
 				});
 		edit_phone = (EditText) findViewById(R.id.edit_phone);
@@ -52,23 +52,23 @@ public class UpdatePhoneActivity extends ActivityBase {
 	  * @return void
 	  * @throws
 	  */
-	private void updateInfo(String nick) {
+	private void updateInfo(String phone) {
 		final User user = userManager.getCurrentUser(User.class);
-		user.setNick(nick);
+		user.setPhone(phone);
 		user.update(this, new UpdateListener() {
 
 			@Override
 			public void onSuccess() {
 				// TODO Auto-generated method stub
 				final User u = userManager.getCurrentUser(User.class);
-				ShowToast("修改成功:"+u.getNick());
+				ShowToast("修改成功:"+u.getPhone());
 				finish();
 			}
 
 			@Override
 			public void onFailure(int arg0, String arg1) {
 				// TODO Auto-generated method stub
-				ShowToast("onFailure:" + arg1);
+				ShowToast("电话号码修改失败:" + arg1);
 			}
 		});
 	}
