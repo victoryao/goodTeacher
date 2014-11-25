@@ -16,6 +16,7 @@ import android.widget.TextView;
 import cn.bmob.im.bean.BmobChatUser;
 import cn.bmob.im.util.BmobLog;
 import cn.bmob.v3.listener.SaveListener;
+import cn.bmob.v3.update.BmobUpdateAgent;
 
 import com.goodteacher.im.student.R;
 import com.goodteacher.im.student.config.BmobConstants;
@@ -42,6 +43,12 @@ public class LoginActivity extends BaseActivity implements OnClickListener {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_login);
+		
+		//Bmob自动更新组件
+		BmobUpdateAgent.setUpdateOnlyWifi(true);
+		BmobUpdateAgent.update(this);
+				
+				
 		init();
 		//注册退出广播
 		IntentFilter filter = new IntentFilter();

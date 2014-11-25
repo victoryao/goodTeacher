@@ -5,22 +5,20 @@ import com.goodteacher.im.student.R;
 
 import com.goodteacher.im.student.adapter.SoftAdapter;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
-import android.widget.Toast;
 import android.widget.AdapterView.OnItemClickListener;
 
 
 public class SoftActivity extends BaseActivity implements OnItemClickListener{
 	
 	
-	private String[] softItemNames = {"意见反馈", "检查更新", "软件设置", "关于我们"};
-	private String[] softItemContents = {"", "", "", ""};
+	private String[] softItemNames = {"意见反馈", "检查更新", "关于我们"};
+	private String[] softItemContents = {"", "", ""};
 	private ListView lvMineSoft;
 	
 	private SoftAdapter softListAdapter;
@@ -50,11 +48,9 @@ public class SoftActivity extends BaseActivity implements OnItemClickListener{
 			startActivity(toFeedBack);
 			break;
 		case 1:
-			toast("已经是最新版本");
+			ShowToast("已经是最新版本");
 			break;
 		case 2:
-			break;
-		case 3:
 			Intent toAboutSoft = new Intent(SoftActivity.this, AboutActivity.class);
 			startActivity(toAboutSoft);
 			break;
@@ -65,11 +61,4 @@ public class SoftActivity extends BaseActivity implements OnItemClickListener{
 		
 	}
 	
-	public void clickSoftBack(View v) {
-		finish();
-	}
-	
-	private void toast(String toast) {
-		Toast.makeText(this, toast, Toast.LENGTH_SHORT).show();
-	}
 }
