@@ -31,6 +31,12 @@
     <!-- 添加自定义的权限 -->
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 
     <!-- UIL框架所需的权限 -->
     <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
@@ -119,14 +125,27 @@
         <activity android:name=".ui.UpdateInfoActivity" />
         <activity android:name=".ui.TeacherInfoActivity" />
         <activity android:name=".ui.TeacherEvalutationActivity" />
-        
         <activity
             android:name=".ui.ChatActivity"
             android:windowSoftInputMode="stateAlwaysHidden|adjustResize" />
         <activity android:name=".ui.SetMyInfoActivity" />
+        <activity android:name=".ui.PayActivity" />
+        
         <activity
             android:name=".ui.RegisterActivity"
             android:label="@string/app_name" />
+        <activity
+            android:name="com.alipay.sdk.app.H5PayActivity"
+            android:configChanges="orientation|keyboardHidden|navigation"
+            android:exported="false"
+            android:screenOrientation="behind" >
+        </activity>
+        <activity
+            android:name="com.alipay.sdk.auth.AuthActivity"
+            android:configChanges="orientation|keyboardHidden|navigation"
+            android:exported="false"
+            android:screenOrientation="behind" >
+        </activity>
 
         <!-- baidu map -->
         <meta-data
@@ -195,7 +214,8 @@
             android:name="com.goodteacher.im.student.ui.AboutActivity"
             android:label="@string/title_activity_about" >
         </activity>
-        <activity android:name=".ui.UpdatePhoneActivity"></activity>
+        <activity android:name=".ui.UpdatePhoneActivity" >
+        </activity>
     </application>
 
 </manifest>

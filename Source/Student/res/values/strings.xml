@@ -54,6 +54,7 @@
     <string name="set_myinfo">个人资料</string>
     <string name="set_myaccount">账号</string>
     <string name="set_blacklist">黑名单</string>
+    <string name="set_account">帐户</string>
     <string name="set_voice">声音</string>
     <string name="set_vibrate">震动</string>
     <string name="set_password">更改密码</string>
