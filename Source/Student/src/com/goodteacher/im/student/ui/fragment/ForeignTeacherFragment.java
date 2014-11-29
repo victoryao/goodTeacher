@@ -43,6 +43,7 @@ public class ForeignTeacherFragment extends FragmentBase implements OnItemClickL
 		initTopBarForOnlyTitle("我的外教");
 		listview = (ListView)findViewById(R.id.list);
 		listview.setOnItemClickListener(this);
+		
 		List<BmobRecent> recentList = BmobDB.create(getActivity()).queryRecents();
 		BmobRecent r = new BmobRecent();
 		r.setUserName("1");

@@ -4,6 +4,7 @@ import cn.bmob.im.bean.BmobChatUser;
 import cn.bmob.v3.datatype.BmobGeoPoint;
 import cn.bmob.v3.datatype.BmobRelation;
 
+
 /** 重载BmobChatUser对象：若还有其他需要增加的属性可在此添加
   * @ClassName: TextUser
   * @Description: TODO
@@ -24,13 +25,22 @@ public class User extends BmobChatUser {
 	/**
 	 * //性别-true-男
 	 */
-	private boolean sex;
+	private boolean sex; //性别
 	
 	private BmobRelation blogs;
 		
-	private String lang;
+	private String lang; //对外教是母语，对学生是想学习的语言
 	
-	private String phone;
+	private String phone;//电话号码
+	
+	private Integer age; //年龄，暂时先简单填写一个年龄字段，将来考虑用出生日期进行计算
+	
+	
+	private String nationality;//国籍
+	
+	private String city;//当前居住城市，对于外教是指在中国的居住城市
+	
+	private String school;//外教或者学生当前在中国就读的学校。
 	
 	private String role;
 	
@@ -94,6 +104,31 @@ public class User extends BmobChatUser {
 	}
 	public void setTeacher(boolean isTeacher) {
 		this.isTeacher = isTeacher;
+	}
+	
+	public String getNationality() {
+		return nationality;
+	}
+	public void setNationality(String nationality) {
+		this.nationality = nationality;
+	}
+	public String getCity() {
+		return city;
+	}
+	public void setCity(String city) {
+		this.city = city;
+	}
+	public String getSchool() {
+		return school;
+	}
+	public void setSchool(String school) {
+		this.school = school;
+	}
+	public Integer getAge() {
+		return age;
+	}
+	public void setAge(Integer age) {
+		this.age = age;
 	}
 	
 }

@@ -21,7 +21,7 @@ import com.goodteacher.im.student.view.xlist.XListView;
 import com.goodteacher.im.student.view.xlist.XListView.IXListViewListener;
 
 /**
- * 附近的人列表
+ * 附近的外教列表
  * 
  * @ClassName: NewFriendActivity
  * @Description: TODO
@@ -73,7 +73,7 @@ public class NearPeopleActivity extends ActivityBase implements IXListViewListen
 	private void initNearByList(final boolean isUpdate){
 		if(!isUpdate){
 			progress = new ProgressDialog(NearPeopleActivity.this);
-			progress.setMessage("正在查询附近的人...");
+			progress.setMessage("正在查询附近的外教...");
 			progress.setCanceledOnTouchOutside(true);
 			progress.show();
 		}
@@ -83,10 +83,10 @@ public class NearPeopleActivity extends ActivityBase implements IXListViewListen
 			//封装的查询方法，当进入此页面时 isUpdate为false，当下拉刷新的时候设置为true就行。
 			//此方法默认每页查询10条数据,若想查询多于10条，可在查询之前设置BRequest.QUERY_LIMIT_COUNT，如：BRequest.QUERY_LIMIT_COUNT=20
 			
-			// 此方法是新增的查询指定10公里内的性别为女性的用户列表，默认包含好友列表
+			// 此方法是新增的查询指定10公里内的外教的用户列表，默认包含我的外教列表
 			
 			//如果你不想查询性别为女的用户，可以将equalProperty设为null或者equalObj设为null即可
-			userManager.queryKiloMetersListByPage(isUpdate,0,"location", longtitude, latitude, true,QUERY_KILOMETERS,"sex",false,new FindListener<User>() {
+			userManager.queryKiloMetersListByPage(isUpdate,0,"location", longtitude, latitude, true,QUERY_KILOMETERS,"isTeacher",true,new FindListener<User>() {
 			//此方法默认查询所有带地理位置信息的且性别为女的用户列表，如果你不想包含好友列表的话，将查询条件中的isShowFriends设置为false就行
 //			userManager.queryNearByListByPage(isUpdate,0,"location", longtitude, latitude, true,"sex",false,new FindListener<User>() {
 
