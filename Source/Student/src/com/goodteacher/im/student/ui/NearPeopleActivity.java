@@ -46,7 +46,7 @@ public class NearPeopleActivity extends ActivityBase implements IXListViewListen
 	}
 
 	private void initView() {
-		initTopBarForLeft("附近的人");
+		initTopBarForLeft("附近的外教");
 		initXListView();
 	}
 
@@ -100,12 +100,12 @@ public class NearPeopleActivity extends ActivityBase implements IXListViewListen
 						adapter.addAll(arg0);
 						if(arg0.size()<BRequest.QUERY_LIMIT_COUNT){
 							mListView.setPullLoadEnable(false);
-							ShowToast("附近的人搜索完成!");
+							ShowToast("附近的外教搜索完成!");
 						}else{
 							mListView.setPullLoadEnable(true);
 						}
 					}else{
-						ShowToast("暂无附近的人!");
+						ShowToast("暂无附近的外教!");
 					}
 					
 					if(!isUpdate){
@@ -118,7 +118,7 @@ public class NearPeopleActivity extends ActivityBase implements IXListViewListen
 				@Override
 				public void onError(int arg0, String arg1) {
 					// TODO Auto-generated method stub
-					ShowToast("暂无附近的人!");
+					ShowToast("暂无附近的外教!");
 					mListView.setPullLoadEnable(false);
 					if(!isUpdate){
 						progress.dismiss();
@@ -129,7 +129,7 @@ public class NearPeopleActivity extends ActivityBase implements IXListViewListen
 
 			});
 		}else{
-			ShowToast("暂无附近的人!");
+			ShowToast("暂无附近的外教!");
 			progress.dismiss();
 		}
 		
@@ -162,7 +162,7 @@ public class NearPeopleActivity extends ActivityBase implements IXListViewListen
 			@Override
 			public void onError(int arg0, String arg1) {
 				// TODO Auto-generated method stub
-				ShowLog("查询更多附近的人出错:"+arg1);
+				ShowLog("查询更多附近的外教出错:"+arg1);
 				mListView.setPullLoadEnable(false);
 				refreshLoad();
 			}
@@ -223,7 +223,7 @@ public class NearPeopleActivity extends ActivityBase implements IXListViewListen
 			@Override
 			public void onFailure(int arg0, String arg1) {
 				// TODO Auto-generated method stub
-				ShowLog("查询附近的人总数失败"+arg1);
+				ShowLog("查询附近的外教总数失败"+arg1);
 				refreshLoad();
 			}
 		});

@@ -22,9 +22,9 @@
     <string name="login_phone">联系电话 </string>
     <string name="message_search_hint">搜索&#8230;</string>
     
-    <string name="main_tab_foreign_teacher">外教</string>
-    <string name="main_tab_recent">外教查找</string>
-    <string name="main_tab_contact">附近外教</string>
+    <string name="main_tab_foreign_teacher">我的外教</string>
+    <string name="main_tab_recent">会话</string>
+    <string name="main_tab_contact">搜外教</string>
     <string name="mian_tab_set">设置</string>
     
     <string name="xlistview_header_hint_normal">下拉刷新</string>
@@ -90,7 +90,8 @@
     
     <string name="new_friends">新朋友</string>
     
-    <string name="near_people">附近的人</string>
+    <string name="near_people">附近的外教</string>
+    <string name="match_teacher">匹配的外教</string>
     
     <string name="voice_up_tips">手指上滑,取消发送</string>
     <string name="voice_cancel_tips">松开手指，取消发送</string>

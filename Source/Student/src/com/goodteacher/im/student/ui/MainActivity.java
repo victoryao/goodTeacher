@@ -62,8 +62,9 @@ public class MainActivity extends ActivityBase implements EventListener{
 
 	private void initView(){
 		mTabs = new Button[4];
-		mTabs[0] = (Button) findViewById(R.id.btn_foreign_teacher);
-		mTabs[1] = (Button) findViewById(R.id.btn_message);
+		
+		mTabs[0] = (Button) findViewById(R.id.btn_message);
+		mTabs[1] = (Button) findViewById(R.id.btn_foreign_teacher);
 		mTabs[2] = (Button) findViewById(R.id.btn_contract);
 		mTabs[3] = (Button) findViewById(R.id.btn_set);
 		iv_recent_tips = (ImageView)findViewById(R.id.iv_recent_tips);
@@ -77,10 +78,11 @@ public class MainActivity extends ActivityBase implements EventListener{
 		contactFragment = new ContactFragment();
 		recentFragment = new RecentFragment();
 		settingFragment = new SettingsFragment();
-		fragments = new Fragment[] {foreignTeacherFragment,recentFragment, contactFragment, settingFragment };
+		fragments = new Fragment[] {recentFragment, foreignTeacherFragment,contactFragment, settingFragment };
 		// 添加显示第一个fragment
-		getSupportFragmentManager().beginTransaction().add(R.id.fragment_container, foreignTeacherFragment)
-		.add(R.id.fragment_container, recentFragment).hide(recentFragment).show(foreignTeacherFragment).commit();
+		getSupportFragmentManager().beginTransaction().add(R.id.fragment_container, recentFragment)
+		.add(R.id.fragment_container, foreignTeacherFragment)
+		.hide(foreignTeacherFragment).show(recentFragment).commit();
 	}
 	
 	
@@ -91,10 +93,10 @@ public class MainActivity extends ActivityBase implements EventListener{
 	 */
 	public void onTabSelect(View view) {
 		switch (view.getId()) {
-		case R.id.btn_foreign_teacher:
+		case R.id.btn_message:			
 			index = 0;
 			break;
-		case R.id.btn_message:
+		case R.id.btn_foreign_teacher:
 			index = 1;
 			break;
 		case R.id.btn_contract:
@@ -173,8 +175,8 @@ public class MainActivity extends ActivityBase implements EventListener{
 		}
 		if(currentTabIndex==0){
 			//当前页面如果为会话页面，刷新此页面
-			if(foreignTeacherFragment != null){
-				foreignTeacherFragment.refresh();
+			if(recentFragment != null){
+				recentFragment.refresh();
 			}
 		}
 	}
@@ -256,8 +258,8 @@ public class MainActivity extends ActivityBase implements EventListener{
 		}
 		iv_contact_tips.setVisibility(View.VISIBLE);
 		if(currentTabIndex==1){
-			if(recentFragment != null){
-				recentFragment.refresh();
+			if(foreignTeacherFragment != null){
+				foreignTeacherFragment.refresh();
 			}
 		}else{
 			//同时提醒通知

@@ -213,7 +213,7 @@ public class AddFriendActivity extends ActivityBase implements OnClickListener,I
 			@Override
 			public void onFailure(int arg0, String arg1) {
 				// TODO Auto-generated method stub
-				ShowLog("查询附近的人总数失败"+arg1);
+				ShowLog("查询附近的外教总数失败"+arg1);
 				refreshLoad();
 			}
 		});

@@ -40,6 +40,7 @@ import com.goodteacher.im.student.adapter.UserFriendAdapter;
 import com.goodteacher.im.student.bean.User;
 import com.goodteacher.im.student.ui.AddFriendActivity;
 import com.goodteacher.im.student.ui.FragmentBase;
+import com.goodteacher.im.student.ui.MatchTeacherActivity;
 import com.goodteacher.im.student.ui.NearPeopleActivity;
 import com.goodteacher.im.student.ui.NewFriendActivity;
 import com.goodteacher.im.student.ui.SetMyInfoActivity;
@@ -102,7 +103,7 @@ public class ContactFragment extends FragmentBase implements OnItemClickListener
 	private void init() {
 		characterParser = CharacterParser.getInstance();
 		pinyinComparator = new PinyinComparator();
-		initTopBarForRight("联系人", R.drawable.base_action_bar_add_bg_selector,
+		initTopBarForRight("查找外教", R.drawable.base_action_bar_add_bg_selector,
 				new onRightImageButtonClickListener() {
 
 					@Override
@@ -209,7 +210,8 @@ public class ContactFragment extends FragmentBase implements OnItemClickListener
 	ImageView iv_msg_tips;
 	TextView tv_new_name;
 	LinearLayout layout_new;//新朋友
-	LinearLayout layout_near;//附近的人
+	LinearLayout layout_near;//附近的外教
+	LinearLayout layout_match;//匹配的外教
 	
 	private void initListView() {
 		list_friends= (ListView)findViewById(R.id.list_friends);
@@ -217,6 +219,7 @@ public class ContactFragment extends FragmentBase implements OnItemClickListener
 		iv_msg_tips = (ImageView)headView.findViewById(R.id.iv_msg_tips);
 		layout_new =(LinearLayout)headView.findViewById(R.id.layout_new);
 		layout_near =(LinearLayout)headView.findViewById(R.id.layout_near);
+		layout_match =(LinearLayout)headView.findViewById(R.id.layout_match);
 		layout_new.setOnClickListener(new OnClickListener() {
 			
 			@Override
@@ -236,6 +239,17 @@ public class ContactFragment extends FragmentBase implements OnItemClickListener
 				startAnimActivity(intent);
 			}
 		});
+		
+		layout_match.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View arg0) {
+				// TODO Auto-generated method stub
+				Intent intent = new Intent(getActivity(), MatchTeacherActivity.class);
+				startAnimActivity(intent);
+			}
+		});
+
 		
 		list_friends.addHeaderView(headView);
 	    userAdapter = new UserFriendAdapter(getActivity(), friends);
@@ -368,7 +382,7 @@ public class ContactFragment extends FragmentBase implements OnItemClickListener
 	}
 	
 	public void showDeleteDialog(final User user) {
-		DialogTips dialog = new DialogTips(getActivity(),user.getUsername(),"删除联系人", "确定",true,true);
+		DialogTips dialog = new DialogTips(getActivity(),user.getUsername(),"删除外教", "确定",true,true);
 		// 设置成功事件
 		dialog.SetOnSuccessListener(new DialogInterface.OnClickListener() {
 			public void onClick(DialogInterface dialogInterface, int userId) {
